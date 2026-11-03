@@ -1,0 +1,30 @@
+[project]
+name = "agentloop"
+version = "0.1.0"
+description = "干眼共病研究循环：数据发现 → 文献检索 → 假设生成 → 审稿 → 登记与验证"
+requires-python = ">=3.11"
+dependencies = [
+    "numpy>=1.26",
+    "pandas>=2.1",
+    "pyarrow>=15",
+    "openpyxl>=3.1",
+    "scipy>=1.11",
+    "statsmodels>=0.14",
+    "matplotlib>=3.8",
+    "python-docx>=1.1",
+    "openai>=1.40",
+    "requests>=2.31",
+]
+
+[project.scripts]
+agentloop = "agentloop.cli:main"
+
+[dependency-groups]
+dev = ["pytest>=8"]
+
+[build-system]
+requires = ["uv_build>=0.11.2,<0.12.0"]
+build-backend = "uv_build"
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]

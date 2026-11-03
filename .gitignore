@@ -1,0 +1,8 @@
+runs/
+配置.txt
+数据/
+.venv/
+.pytest_cache/
+__pycache__/
+.环境/
+环境检查报告.txt

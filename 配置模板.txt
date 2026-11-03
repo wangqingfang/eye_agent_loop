@@ -1,0 +1,16 @@
+# 干眼共病研究助手 配置文件
+# 用法：把等号后面换成你自己的内容，然后保存。以 # 开头的行是说明，不用改。
+# 注意：等号两边不要加空格；这个文件里有你的 API Key，不要发给别人。
+
+# 大模型 API Key（必填）。在 DeepSeek 开放平台的「API Keys」页面创建，以 sk- 开头
+API_KEY=
+
+# 以下一般不用改。如果用的不是 DeepSeek，请技术同事帮忙修改
+BASE_URL=https://api.deepseek.com
+MODEL=deepseek-chat
+
+# 最多跑几轮
+MAX_ROUNDS=5
+
+# 费用上限：本次研究最多使用多少 token，达到后自动保存并停止（技术同事可按预算调整）
+TOKEN_BUDGET=2000000

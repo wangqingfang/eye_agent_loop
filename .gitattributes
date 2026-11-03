@@ -1,0 +1,4 @@
+# Windows 批处理以 GBK + CRLF 保存，git 不得改动其字节
+*.bat -text
+*.command text eol=lf
+*.xlsx binary
