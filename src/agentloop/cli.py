@@ -50,6 +50,7 @@ def _parser():
     doc.add_argument("--quick", action="store_true", help="快速检查：不联网、不跑离线自检")
     doc.add_argument("--machine", action="store_true", help="只输出本机信息与机器绑定状态")
     doc.add_argument("--config", type=Path, default=None)
+    sub.add_parser("pack", help="打包分发：生成在 Windows 上解压不乱码的 zip（输出到 dist/）")
     for sp in (run, res, rep):
         sp.add_argument("--config", type=Path, required=True)
         sp.add_argument("--no-browser", action="store_true")
@@ -107,6 +108,11 @@ def main(argv=None) -> int:
         from .doctor import run_doctor
 
         return run_doctor(quick=args.quick, machine_only=args.machine, config_path=args.config, out=say)
+    if args.command == "pack":
+        from . import pack
+        from .doctor import project_dir
+
+        return pack.run(project_dir(), out=say)
     try:
         if args.command == "report":
             config = load_config(args.config, require_api_key=False)

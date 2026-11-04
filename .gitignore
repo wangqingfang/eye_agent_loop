@@ -6,3 +6,4 @@ runs/
 __pycache__/
 .环境/
 环境检查报告.txt
+dist/

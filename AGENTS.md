@@ -9,6 +9,7 @@
 - `.command` 脚本里紧挨中文的变量必须写成 `${VAR}`，否则 bash 在中文环境下会把中文当成变量名的一部分。
 - 环境检查：`uv run agentloop doctor`（`--quick` 快速、`--machine` 机器信息）；安装与机器绑定见 14 号票。
 - 在本目录双击启动文件会以 `--no-dev` 同步环境、移除 pytest；之后 `uv run pytest` 会自动装回。
+- 分发给别人只用 `打包分发.command`（`agentloop pack`）或 GitHub 的 Download ZIP；访达「压缩」不写 UTF-8 文件名标记，Windows 解压会乱码。
 - 启动契约（命令、参数、退出码）见 `.scratch/research-loop/issues/13-non-programmer-launcher-and-guide.md`。
 
 ## Agent skills
